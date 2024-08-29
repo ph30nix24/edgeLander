@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: "Roboto", sans-serif;
+        }
+        .navBar, .main, .logo, .links ul{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .navBar {
+            padding: 20px;
+            justify-content: space-between;
+        }
+        .logo i {
+            font-size: 28px;
+        }
+        .logo h1 {
+            font-size: 24px;
+            margin-left: 8px;
+        }
+        li {
+            list-style: none;
+            margin: 0px 4px;
+            padding: 0px 16px;
+        }
+        .bars {
+            display: none;
+        }
+
+        @media screen and (max-width : 768px) {
+            .bars {
+                display: block;
+                font-size: 28px;
+            }
+            .main {
+                justify-content: space-between;
+                width: 100%;
+            }
+            .links {
+                display: none;
+            }
+            .navBar {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navBar text-light bg-dark">
+        <div class="main">
+            <div class="logo">
+                <i class="fa fa-solid fa-book-open text-primary"></i>
+                <h1 class="ttc"><span class="text-primary">edge</span>Ledger</h1>
+            </div>
+            <div class="bars js-button">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+        <div class="links ttc">
+            <ul>
+                <li><a class="text-light td" href="index.html">Home</a></li>
+                <li><a class="text-light td" href="index.html#middle">about</a></li>
+                <li><a class="text-light td" href="index.html#cases-section">cases</a></li>
+                <li><a class="text-light td" href="index.html#blog-section">blog</a></li>
+                <li><a class="text-light td" href="index.html#contect-section">contect</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <script>
+        let isClicked = false;
+        const navElement = document.querySelector(".js-button").addEventListener("click", () => {
+            if(!isClicked) {
+                document.querySelector(".links").style.display = "Block";
+                isClicked = true;
+            }
+            else {
+                document.querySelector(".links").style.display = "none";
+                isClicked = false;
+            }
+        });
+    </script>
+</body>
+</html>
